@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from .models import Todo
 
@@ -20,3 +20,17 @@ def details(request, id):
     }
 
     return render(request, 'details.html', context)
+
+
+def add(request):
+    # return render(request, 'add.html')
+    if request.method == 'POST':
+        title = request.POST['title']
+        text = request.POST['text']
+
+        todo = Todo(title=title, text=text)
+        todo.save()
+
+        return redirect('/todos')
+    else:
+        return render(request, 'add.html')
