@@ -1,0 +1,19 @@
+{% load el_pagination_tags %}
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Django EL(Endless) Pagination</title>
+</head>
+<body>
+	<h1>Django EL(Endless) Pagination</h1>
+	{% paginate numbers %}
+	{% for number in numbers %}
+	 <h2>{{ number }}</h2>
+	{% endfor %}
+	{% show_pages %}
+	
+</body>
+</html>
