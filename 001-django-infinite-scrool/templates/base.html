@@ -1,0 +1,29 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Infinite Scroll</title>
+	<style type="text/css">
+    body {
+      width: 500px;
+      margin: 0 auto;
+    }
+    .infinite-item, .loading {
+      margin-bottom: 5px;
+      background-color: #1eaedb;
+      color: #fff;
+      text-align: center;
+      padding: 25px 0;
+    }
+    .loading {
+      background-color: #333;
+    }
+  </style>
+</head>
+<body>
+	<h2>Infinite Scroll</h2>
+	{% block content %}
+	{% endblock %}
+</body>
+</html>
