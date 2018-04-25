@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>tooltip test</title>
+</head>
+<body>
+	<div class="button">
+		<span class="tooltip-toggle" aria-label="Sample text for your tooltip!" tableindex="0">i</span>
+		<div class="label">Hover over it!</div>
+	</div>
+	
+</body>
+
+
+</html>
+
+
+<style>
+.button{
+	display: block;
+	width: 200px;
+	color: white;
+	padding: 10px;
+	background-color: blue;
+	margin: 50vh auto;
+	border-radius: 10px;
+}
+
+.label {
+	display: inline-block;
+	margin-left: 20px;
+	/*display: flex;*/
+	/*align-items: center;*/
+	/*justify-content: center;*/
+}
+
+.tooltip-toggle {
+	display: inline-block;
+	cursor: pointer;
+	position: relative;
+	border: 1px solid white;
+	border-radius: 50px;
+	width: 15px;
+	height: 15px;
+	padding: 10px;
+}
+
+/*tooltip container*/
+.tooltip-toggle::before {
+	position: absolute;
+	top: -80px;
+	left: -80px;
+	background-color: black;
+	border-radius: 5px;
+	color: white;
+	content: attr(aria-label);
+	padding: 1rem;
+	text-transform: none;
+	width: 160px;
+}
+
+/*Tooltip arrow*/
+  .tooltip-toggle::after {
+    position: absolute;
+    top: -12px;
+    left: 9px;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 5px solid #2B222A;
+    content: " ";
+    font-size: 0;
+    line-height: 0;
+    margin-left: -5px;
+    width: 0;
+  }
+
+/*setting up the transistion */
+.tooltip-toggle::before,
+.tooltip-toggle::after {
+	font-family: monospace;
+	font-size: 16px;
+	opacity: 0;
+	pointer-events: none;
+	text-align: center;
+}
+
+
+
+
+
+.tooltip-toggle:focus::before,
+.tooltip-toggle:focus::after,
+.tooltip-toggle:hover::before,
+.tooltip-toggle:hover::after {
+	opacity: 1;
+	transition: all 0.75s ease;
+}
+
+
+
+</style>
