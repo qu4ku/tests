@@ -1,13 +1,32 @@
 from django.contrib import admin
-from django.urls import path
+from django.urls import path, include
 from django.conf.urls.i18n import i18n_patterns
 from django.conf import settings
+from django.utils.translation import gettext as _
+
+from core import views
+
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
+    # path('', include('core.urls')),
 ]
 
 urlpatterns += i18n_patterns(
 	# Django Admin
-	path('admin/', admin.site.urls)
+	path('admin/', admin.site.urls),
+	path(_('about/'), views.about_view, name='about'),
+	path(_('articles/'), views.articles_view, name='articles'),
+	prefix_default_language=False,
 )
+
+print(_('articles/'))
+print(path(_('articles/'), views.articles_view, name='articles'))
+
+
+from django.utils.translation import activate
+from django.urls import reverse
+
+for lang in ['en', 'pl']:
+	activate(lang)
+	print(_('articles/'))
+	print(reverse('articles'))
