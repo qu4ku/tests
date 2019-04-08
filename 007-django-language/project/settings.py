@@ -1,5 +1,6 @@
 import os
 from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import gettext
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -94,10 +95,10 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/2.1/topics/i18n/
 
-LANGUAGES = (
+LANGUAGES = [
 	('en', _('English')),
 	('pl', _('Polish')),
-)
+]
 
 LOCALE_PAHTS = (
 	os.path.join(BASE_DIR, 'locale'),
