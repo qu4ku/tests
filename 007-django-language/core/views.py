@@ -26,6 +26,8 @@ def home_view(request):
 	from django.utils.translation import LANGUAGE_SESSION_KEY
 	request.session[LANGUAGE_SESSION_KEY] = 'pl'
 
+	translation.activate('pl')
+
 	output = _("Welcome to my site.")
 	print(output)
 

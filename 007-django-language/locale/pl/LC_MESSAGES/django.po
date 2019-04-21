@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-04-08 10:16+0000\n"
+"POT-Creation-Date: 2019-04-08 23:09+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -20,22 +20,22 @@ msgstr ""
 "%100<12 || n%100>14) ? 1 : n!=1 && (n%10>=0 && n%10<=1) || (n%10>=5 && n"
 "%10<=9) || (n%100>=12 && n%100<=14) ? 2 : 3);\n"
 
-#: core/views.py:13
+#: core/views.py:29
 msgid "Welcome to my site."
 msgstr "Witamy na stronie."
 
-#: project/settings.py:98
+#: project/settings.py:100
 msgid "English"
 msgstr ""
 
-#: project/settings.py:99
+#: project/settings.py:101
 msgid "Polish"
 msgstr ""
 
-#: project/urls.py:19
+#: project/urls.py:20
 msgid "about/"
 msgstr "onas/"
 
-#: project/urls.py:20 project/urls.py:34 project/urls.py:36
+#: project/urls.py:21
 msgid "articles/"
 msgstr "artykuly/"
