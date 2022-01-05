@@ -1,0 +1,35 @@
+<html lang="en">
+<head>
+  <title>Sound effect test.</title>
+</head>
+
+<body>
+  <div class="box">This is some random test text with <span class="sound" onmouseover="soundOver.play()" onclick="soundClick.play()" >sound.</span></div>
+</body>
+
+</html>
+
+<script>
+var soundOver = new Audio();
+soundOver.src = "stingers2.mp3";
+var soundClick = new Audio();
+soundClick.src = "woosh.mp3";
+</script>
+
+<style>
+  body {
+    font-size: 48px;
+    margin: 100px;
+  }
+  .box { 
+    width: 50%;
+    height: 50%;
+    margin: auto;
+  }
+  .sound {
+    color: red;
+  }
+  .sound:hover {
+    color: blue;
+  }
+</style>
