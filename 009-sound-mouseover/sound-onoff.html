@@ -1,0 +1,80 @@
+<html lang="en">
+<head>
+  <title>Sound effect test.</title>
+</head>
+
+<body>
+  <div class="box">This is some random test text with <span class="sound" onmouseover="soundOver.play()" onclick="soundClick.play()" >sound.</span></div>
+</body>
+
+<div class="song-box">
+	<img src="icons/sound-on.png" alt="" id="icon">
+</div>
+
+
+<audio id="song">
+	<source src="song2.mp3" type="audio/mp3">
+</audio>
+
+</html>
+
+<script>
+	var song = document.getElementById("song");
+	var icon = document.getElementById("icon");
+
+	icon.onclick = function () {
+		if (song.paused) {
+			song.play();
+			icon.src = "icons/sound-off.png";
+		} else {
+			song.pause();
+			icon.src = "icons/sound-on.png";
+		}
+
+
+
+	}
+
+
+
+</script>
+
+
+
+<script>
+var soundOver = new Audio();
+soundOver.src = "stingers2.mp3";
+var soundClick = new Audio();
+soundClick.src = "woosh.mp3";
+</script>
+
+
+
+
+
+<style>
+  body {
+    font-size: 48px;
+    margin: 100px;
+		/* height: 100%; */
+  }
+  .box { 
+    width: 50%;
+    height: 50%;
+    margin: auto;
+  }
+  .sound {
+    color: red;
+  }
+  .sound:hover {
+    color: blue;
+  }
+
+
+	.song-box { 
+		position: absolute;
+		right: 50px;
+		bottom: 50px;
+		cursor: pointer;
+	}
+</style>
